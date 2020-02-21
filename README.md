@@ -18,7 +18,7 @@ The required version is cudnn-10.0-linux-x64-v7.4.1.5.tgz. Please, decompress th
 - sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 Great!! Cuda is already installed!
 # Python
-3. Prepare the Python environment
+1. Prepare the Python environment
 To this end, I recommend to use Anaconda following the next link 
 https://www.ceos3c.com/open-source/install-anaconda-ubuntu-18-04/
 - Once anancoda was installed, proceed to create an environment to run tensorflow
@@ -32,10 +32,15 @@ https://www.ceos3c.com/open-source/install-anaconda-ubuntu-18-04/
 # OpenCV
 1. Basic Dependecies
   - sudo apt install ffmpeg cmake
-  - sudo install libgtk2.0-dev  libcanberra-gtk-module libcanberra-gtk3-module [graphic interface]  
+  - sudo apt install libgtk2.0-dev  libcanberra-gtk-module libcanberra-gtk3-module [graphic interface]  
 2. Installing OpenCV 4.1
   We'll use the script insta_all.sh
-  - sudo apt install_all.sh (you can find it in this repo)
+  - bash install_all.sh (you can find it in this repo)
+3. Test opencv
+  - git clone opencv
+  - Go to the folder "test" inside "opencv"
+  - make
+  - ./build/test [image file]. You can find some images in the folder "images" inside "opencv".
   
 
 
