@@ -27,17 +27,20 @@ https://www.ceos3c.com/open-source/install-anaconda-ubuntu-18-04/
   - pip install  numpy
   - pip install scikit-image
   - pip install scikit-learn  
-  - pip install tensorflow-gpu==1.13.1
+  - pip install tensorflow-gpu==1.13.1 *Now we are moving to tf 2.2*
   - Note: After getting inside the python3.6 environment the LD_LIBRARY_PATH must be set to export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/usr/local/cuda/lib64"
 # OpenCV
 1. Basic Dependecies
   - sudo apt install ffmpeg cmake
   - sudo apt install libgtk2.0-dev  libcanberra-gtk-module libcanberra-gtk3-module [graphic interface]  
 2. Installing OpenCV 4.1
-  We'll use the script insta_all.sh
-  - bash install_all.sh (you can find it in this repo)
-3. Test opencv
-  - git clone opencv
+  We'll use the script install.sh inside opencv dir
+  - bash opencv/install.sh 
+3. Installing flann
+  We'll use the script install.sh inside flann dir
+  - bash flann/install.sh 
+4. Test opencv
+  - git clone opencv [https://github.com/jmsaavedrar/opencv]
   - Go to the folder "test" inside "opencv"
   - make
   - ./build/test [image file]. You can find some images in the folder "images" inside "opencv".
