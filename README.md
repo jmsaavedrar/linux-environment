@@ -30,7 +30,7 @@ https://www.ceos3c.com/open-source/install-anaconda-ubuntu-18-04/
   - pip install tensorflow-gpu==1.13.1 *Now we are moving to tf 2.2*
   - Note: After getting inside the python3.6 environment the LD_LIBRARY_PATH must be set to export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/usr/local/cuda/lib64"
 # OpenCV
-1. Basic Dependecies
+1. Basic Dependencies
     - sudo apt install ffmpeg cmake
     - sudo apt install libgtk2.0-dev  libcanberra-gtk-module libcanberra-gtk3-module [graphic interface]  
 2. Installing OpenCV 4.1
