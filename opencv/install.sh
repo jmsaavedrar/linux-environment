@@ -1,3 +1,4 @@
+#install opencv4
 DEPS_DIR="$HOME/dependencies"
 
 function setPkgEnv {
@@ -10,8 +11,6 @@ function setPkgEnv {
 	export PKG_CONFIG_PATH
 }
 
-#install-ffmpeg.sh install-flann.sh install-vlfeat.sh install-opencv.sh install-siftSurf.sh install-libsvm.sh
-#for script in install-ffmpeg.sh install-flann.sh install-vlfeat.sh  install-siftSurf.sh install-libsvm.sh;
 for script in install-opencv-4.sh
 do
 	echo

@@ -20,20 +20,22 @@ INSTALL_DIR="$DEPS_DIR/opencv"
 #sudo apt-get install libdc1394-22-dev libxine-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev libtiff4-dev libjpeg-dev libjasper-dev
 #sudo pat-get install tesseract-ocr-dev
 #/opt/opencv/release$ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib/modules ..
+
 OPT=""
 OPT="$OPT -D BUILD_SHARED_LIBS=ON"
-#OPT="$OPT -D BUILD_SHARED_LIBS=OFF"
 OPT="$OPT -D WITH_VTK=OFF"
 OPT="$OPT -D BUILD_TESTS=OFF"
 OPT="$OPT -D BUILD_TBB=ON"
 OPT="$OPT -D BUILD_PYTHON_SUPPORT=ON"
 OPT="$OPT -D BUILD_OPENCV_PYTHON=ON"
 OPT="$OPT -D BUILD_TIFF=ON"
-OPT="$OPT -D PYTHON3_EXECUTABLE=/home/jsaavedr/anaconda3/bin/python3" \
-OPT="$OPT -D PYTHON3_INCLUDE_DIR=/home/jsaavedr/anaconda3/include/python3.6m" \
-OPT="$OPT -D PYTHON3_LIBRARY=/home/jsaavedr/anaconda3/lib/libpython3.6m.so" \
-OPT="$OPT -D PYTHON2_INCLUDE_DIR=/usr/include/python2.7" \
+#----defining specific python libs
+OPT="$OPT -D PYTHON3_EXECUTABLE=$HOME/anaconda3/bin/python3" 
+OPT="$OPT -D PYTHON3_INCLUDE_DIR=$HOME/anaconda3/include/python3.6m" 
+OPT="$OPT -D PYTHON3_LIBRARY=$HOME/anaconda3/lib/libpython3.6m.so" 
+OPT="$OPT -D PYTHON2_INCLUDE_DIR=/usr/include/python2.7" 
 OPT="$OPT -D BUILD_opencv_python3=yes"
+#-----------------------------------
 OPT="$OPT -D BUILD_EXAMPLES=ON"
 OPT="$OPT -D WITH_FFMPEG=ON"
 OPT="$OPT -D WITH_GTK=ON"
@@ -44,7 +46,8 @@ OPT="$OPT -D CUDA_GENERATION=Auto"
 OPT="$OPT -D WITH_CUDA=ON"
 OPT="$OPT -D BUILD_opencv_cudacodec=OFF"
 OPT="$OPT -D WITH_CUBLAS=ON"
-OPT="$OPT -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-10.0"
+#---defining cuda directory
+OPT="$OPT -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda"
 #----------------------
 OPT="$OPT -D BUILD_EXAMPLES=ON"
 #----------------------
@@ -67,7 +70,7 @@ OPT="$OPT -DBUILD_opencv_cnn_3dobj=OFF"
 #---- compliling opencv4 with c++11
 OPT="$OPT -DCMAKE_CXX_FLAGS=-std=c++11"
 OPT="$OPT -DCUDA_PROPAGATE_HOST_FLAGS=off" 
-#to produce *.pc file
+#---- to produce *.pc file
 OPT="$OPT -DOPENCV_GENERATE_PKGCONFIG=YES"
 version="4.1.0"
 filename="${version}.zip"
@@ -113,12 +116,8 @@ if [[ -d ${CUDA_HOME} ]]; then
         CUDA_INCLUDE="-I${CUDA_HOME}/include"
 fi && \
 for file in "$INSTALL_DIR"/lib/pkgconfig/*.pc; do
-  sed  -e "s#^Libs:\(.*\)\$#Libs: -L\${libdir}/opencv4/3rdparty/ \1 ${CUDA_LIBS} -Wl,-rpath,\${libdir}  -Wl,-rpath,\${libdir}/opencv4/3rdparty/#" -i "$file"
-  sed  -e "s#^\(Cflags:.*\)\$#\1 ${CUDA_INCLUDE}#" -i "$file"
-done && \
-for l in `ls ${INSTALL_DIR}/lib/opencv4/3rdparty/*`; do
-        b=`basename $l`
-        ln -s $l ${INSTALL_DIR}/$b
+	sed  -e "s#^Libs:\(.*\)\$#Libs:  \1 ${CUDA_LIBS} -Wl,-rpath,\${libdir}#" -i  $file && \
+  	sed  -e "s#^\(Cflags:.*\)\$#\1 ${CUDA_INCLUDE}#" -i $file  
 done && \
 echo ok
 
