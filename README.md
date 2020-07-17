@@ -47,7 +47,7 @@ https://www.ceos3c.com/open-source/install-anaconda-ubuntu-18-04/
   
 # Tensorflow API C
 1. Dowloand it from https://www.tensorflow.org/install/lang_c
-2. After decomprising the file, you will have the folder tensorflow (tf). Please copy it to the dependecies location. I recommend adding a pkgconfig (tf.pc) file to this lib. 
+2. After uncomprissing the file, you will have the folder tensorflow (tf). Please copy it to the dependecies location. I recommend adding a pkgconfig (tf.pc) file to this lib. 
 
 
 
