@@ -34,10 +34,10 @@ https://www.ceos3c.com/open-source/install-anaconda-ubuntu-18-04/
     - sudo apt install ffmpeg cmake
     - sudo apt install libgtk2.0-dev  libcanberra-gtk-module libcanberra-gtk3-module [graphic interface]  
 2. Installing OpenCV 4.1
-  We'll use the script install.sh inside opencv dir
+    We'll use the script install.sh inside opencv dir
     - bash opencv/install.sh 
-3. Installing flann
-  We'll use the script install.sh inside flann dir
+3. Installing FLANN
+    We'll use the script install.sh inside flann dir
     - bash flann/install.sh 
 4. Test opencv
     - git clone opencv [https://github.com/jmsaavedrar/opencv]
