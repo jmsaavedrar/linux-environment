@@ -41,7 +41,7 @@ https://www.anaconda.com/download/#linux
     - sudo apt install libatlas-base-dev gfortran
     - Install libjasper-dev. If possible that you need to import the repository. An example for Ubuntu 18.06 is show:
     >sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main" & sudo apt update
-3. Python Support
+3. Python Support.
 For generating cv2.so for Python3, please check out the python's variables in the installation script.
 4. Installing OpenCV 4.3.
 We'll use the script install.sh inside opencv dir
