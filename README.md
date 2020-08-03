@@ -19,9 +19,12 @@ The required version is cudnn-10.0-linux-x64-v7.4.1.5.tgz. Please, decompress th
 Great!! Cuda is already installed!
 # Python
 1. Prepare the Python environment
-To this end, I recommend to use Anaconda following the next link 
+To this end, I recommend to use Anaconda following the next link
+
 https://www.ceos3c.com/open-source/install-anaconda-ubuntu-18-04/
+
 or
+
 https://www.anaconda.com/download/#linux
 - Once anancoda was installed, proceed to create an environment to run tensorflow
   - conda create -n python3.6 python=3.6
