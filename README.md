@@ -40,8 +40,7 @@ https://www.anaconda.com/download/#linux
     - sudo apt install libxvidcore-dev libx264-dev
     - sudo apt install libatlas-base-dev gfortran
     - Install libjasper-dev. If possible that you need to import the repository. An example for Ubuntu 18.06 is show:
-    >sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
-    >sudo apt update
+    >sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main" & sudo apt update
 
 2. Installing OpenCV 4.3.
 We'll use the script install.sh inside opencv dir
