@@ -19,12 +19,7 @@ The required version is cudnn-10.0-linux-x64-v7.4.1.5.tgz. Please, decompress th
 Great!! Cuda is already installed!
 # Python
 1. Prepare the Python environment
-To this end, I recommend to use Anaconda following the next link
-
-https://www.ceos3c.com/open-source/install-anaconda-ubuntu-18-04/
-
-or
-
+To this end, I recommend to install Anaconda following the next link
 https://www.anaconda.com/download/#linux
 - Once anancoda was installed, proceed to create an environment to run tensorflow
   - conda create -n python3.6 python=3.6
@@ -32,7 +27,7 @@ https://www.anaconda.com/download/#linux
   - pip install  numpy
   - pip install scikit-image
   - pip install scikit-learn  
-  - pip install tensorflow-gpu==1.13.1 *Now we are moving to tf 2.2*
+  - pip install tensorflow-gpu *Now we are moving to tf 2.2*
   - Note: After getting inside the python3.6 environment the LD_LIBRARY_PATH must be set to export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/usr/local/cuda/lib64"
 # OpenCV
 1. Basic Dependencies
