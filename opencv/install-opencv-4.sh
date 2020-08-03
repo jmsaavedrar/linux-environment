@@ -30,9 +30,10 @@ OPT="$OPT -D BUILD_PYTHON_SUPPORT=ON"
 OPT="$OPT -D BUILD_OPENCV_PYTHON=ON"
 OPT="$OPT -D BUILD_TIFF=ON"
 #----defining specific python libs
-OPT="$OPT -D PYTHON3_EXECUTABLE=$PYTHPN_ENV/bin/python3" 
-OPT="$OPT -D PYTHON3_INCLUDE_DIR=$PYTHON_ENV/include/python3.6m" 
-OPT="$OPT -D PYTHON3_LIBRARY=$PYTHON_ENV/lib/libpython3.6m.so" 
+OPT="$OPT -D PYTHON3_EXECUTABLE=${PYTHON_ENV}/bin/python3"
+OPT="$OPT -D PYTHON3_INCLUDE_DIR=${PYTHON_ENV}/include/python3.6m"
+OPT="$OPT -D PYTHON3_LIBRARY=${PYTHON_ENV}/lib/libpython3.6m.so" 
+OPT="$OPT -D PYTHON3_NUMPY_INCLUDE_DIRS=${PYTHON_ENV}/lib/python3.6/site-packages/numpy/core/include/"
 OPT="$OPT -D PYTHON2_INCLUDE_DIR=/usr/include/python2.7" 
 OPT="$OPT -D BUILD_opencv_python3=yes"
 #-----------------------------------
