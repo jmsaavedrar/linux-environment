@@ -33,7 +33,17 @@ https://www.anaconda.com/download/#linux
 1. Basic Dependencies
     - sudo apt install ffmpeg cmake
     - sudo apt install libgtk2.0-dev  libcanberra-gtk-module libcanberra-gtk3-module [graphic interface]  
-2. Installing OpenCV 4.1.
+    - sudo apt install build-essential cmake unzip pkg-config
+    - sudo apt install libgtk-3.dev
+    - sudo apt install libjpeg-dev libpng-dev libtiff-dev
+    - sudo apt install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+    - sudo apt install libxvidcore-dev libx264-dev
+    - sudo apt install libatlas-base-dev gfortran
+    - Install libjasper-dev. If possible that you need to import the repository. An example for Ubuntu 18.06 is show:
+    >sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+    >sudo apt update
+
+2. Installing OpenCV 4.3.
 We'll use the script install.sh inside opencv dir
     - bash opencv/install.sh 
 3. Installing FLANN.
