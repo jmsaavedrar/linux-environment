@@ -11,6 +11,9 @@ Ubuntu 18.04
   - CUDA_HOME="/usr/local/cuda"
   - LD_LIBRARY_PATH="/usr/local/cuda/lib64"
   - Add /usr/local/cuda/bin to "PATH" variable
+
+For CUDA 10.1, please follow the instructions in this [link] (https://www.tensorflow.org/install/gpu#ubuntu_1604_cuda_101)
+
 2. Add cudnn
 The required version is cudnn-10.0-linux-x64-v7.4.1.5.tgz. Please, decompress the file. After that you will get the folder "cuda" containing include and lib files.
 - sudo cp cuda/include/cudnn.h /usr/local/cuda/include
