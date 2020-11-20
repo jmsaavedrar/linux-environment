@@ -1,8 +1,8 @@
 # linux-environment
 Here, you will find the required intructions to install basic libraries to compile most of my projects.
-Ubuntu 18.04 or 20.04
+These instructions work for Ubuntu 18.04 or 20.04
 # CUDA
-The following steps are based on the specifications from https://www.tensorflow.org/install/gpu#ubuntu_1804_cuda_101
+The following steps are based on the specifications given by https://www.tensorflow.org/install/gpu#ubuntu_1804_cuda_101.
 ## Add NVIDIA repositories
 - wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.1.243-1_amd64.deb
 - sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
