@@ -1,25 +1,30 @@
 # linux-environment
 Here, you will find the required intructions to install basic libraries to compile most of my projects.
-Ubuntu 18.04
+Ubuntu 18.04 or 20.04
 # CUDA
-1. Install CUDA 10.0
-- sudo dpkg -i cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
-- sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+The following steps are based on the specifications from https://www.tensorflow.org/install/gpu#ubuntu_1804_cuda_101
+## Add NVIDIA repositories
+- wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.1.243-1_amd64.deb
+- sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+- sudo dpkg -i cuda-repo-ubuntu1804_10.1.243-1_amd64.deb
 - sudo apt update
-- sudo apt install cuda-10-0
-- Modify /etc/environment to include
-  - CUDA_HOME="/usr/local/cuda"
-  - LD_LIBRARY_PATH="/usr/local/cuda/lib64"
-  - Add /usr/local/cuda/bin to "PATH" variable
+- wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/nvidia-machine-learning-repo-ubuntu1804_1.0.0-1_amd64.deb
+- sudo apt install ./nvidia-machine-learning-repo-ubuntu1804_1.0.0-1_amd64.deb
+- sudo apt update
+## Install NVIDIA driver
+- sudo apt install nvidia-driver-455
+- Reboot
+- Test driver with nvidia-smi
+## Install cuda and libcudnn
+- sudo apt-get install cuda-10-1 libcudnn7=7.6.5.32-1+cuda10.1 libcudnn7-dev=7.6.5.32-1+cuda10.1
+## Install TensorRT
+- sudo apt-get install -y libnvinfer6=6.0.1-1+cuda10.1 libnvinfer-dev=6.0.1-1+cuda10.1 libnvinfer-plugin6=6.0.1-1+cuda10.1
+## libcublas
+- libcublas is installed in the folder cuda-10.2, check it. You will need to add this folder to LD_LIBRARY_PATH in ~/.profile.
+- source ~/.profile
 
-For CUDA 10.1, please follow the instructions in this [link](https://www.tensorflow.org/install/gpu#ubuntu_1804_cuda_101)
-
-2. Add cudnn
-The required version is cudnn-10.0-linux-x64-v7.4.1.5.tgz. Please, decompress the file. After that you will get the folder "cuda" containing include and lib files.
-- sudo cp cuda/include/cudnn.h /usr/local/cuda/include
-- sudo cp cuda/lib64/libcudnn*  /usr/local/cuda/lib64/
-- sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 Great!! Cuda is already installed!
+
 # Python
 1. Prepare the Python environment
 To this end, I recommend to install Anaconda following the next link
