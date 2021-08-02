@@ -51,10 +51,10 @@ https://www.anaconda.com/download/#linux
     >sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main" & sudo apt update
 3. Python Support.
 For generating cv2.so for Python3, please check out the python's variables in the installation script.
-4. Installing OpenCV 4.3.
+4. Installing OpenCV 4.5.
 We'll use the script install.sh inside opencv dir
     - bash opencv/install.sh 
-5. Installing FLANN.
+5. Installing FLANN [optional, in case of installing jmsr].
 We'll use the script install.sh inside flann dir
     - bash flann/install.sh 
 6. Test opencv
