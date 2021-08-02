@@ -64,7 +64,7 @@ We'll use the script install.sh inside flann dir
     - ./build/test [image file]. You can find some images in the folder "images" inside "opencv".
   
 # Tensorflow API C
-1. Dowloand it from https://www.tensorflow.org/install/lang_c
+1. Dowloand it from https://www.tensorflow.org/install/lang_c [current version is 2.4]
 2. After uncomprissing the file, you will have the folder tensorflow (tf). Please copy it to the dependecies location. I recommend adding a pkgconfig (tf.pc) file to this lib. 
 
 
